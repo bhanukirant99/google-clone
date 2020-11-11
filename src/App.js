@@ -1,12 +1,26 @@
 import './App.css';
 import Home from './pages/Home';
+import Search from './pages/Search';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
   return (
     <div className="app">
-      <h1>working</h1>
-
-      <Home />
+     <Router>
+        <Switch>
+            <Route path='/search'>
+                <Search />
+            </Route>
+            <Route path='/'>
+                <Home />
+            </Route>
+        </Switch>
+    </Router>
     </div>
   );
 }
